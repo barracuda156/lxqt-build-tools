@@ -5,10 +5,9 @@
 #   qmake -query QT_INSTALL_CONFIGURATION
 #
 
-find_package(Qt5Core REQUIRED)
+find_package(Qt4 COMPONENTS QtCore REQUIRED)
 
 if(NOT DEFINED LXQT_ETC_XDG_DIR)
-    get_target_property(QT_QMAKE_EXECUTABLE ${Qt5Core_QMAKE_EXECUTABLE} IMPORTED_LOCATION)
     message(STATUS "${QT_QMAKE_EXECUTABLE}")
 
     if(NOT QT_QMAKE_EXECUTABLE)
@@ -23,4 +22,3 @@ if(NOT DEFINED LXQT_ETC_XDG_DIR)
     message(STATUS "You can set it manually with -DLXQT_ETC_XDG_DIR=<value>")
     message(STATUS "")
 endif ()
-

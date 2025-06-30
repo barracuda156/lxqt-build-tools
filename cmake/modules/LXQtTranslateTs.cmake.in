@@ -62,11 +62,9 @@
 #                   present. Defaults to "Runtime".
 #
 
-find_package(Qt5LinguistTools "@LXQT_MIN_LINGUIST_VERSION@" REQUIRED)
-
 function(lxqt_translate_ts qmFiles)
     set(oneValueArgs
-        USE_QT5
+        USE_QT4
         UPDATE_TRANSLATIONS
         TEMPLATE
         TRANSLATION_DIR
@@ -85,7 +83,7 @@ function(lxqt_translate_ts qmFiles)
     endif()
 
     if (NOT DEFINED TR_USE_QT5)
-        set(TR_USE_QT5 "Yes")
+        set(TR_USE_QT5 "No")
     endif()
 
     if(NOT DEFINED TR_TEMPLATE)
